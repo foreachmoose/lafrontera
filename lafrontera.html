@@ -219,10 +219,9 @@ img.full-width {
 
 **La Frontera**
 
-Tú estás en la frontera en algún lugar turbio en el Oriente Medio. Ahora, la tienes que cruzar para reunirte con un socio en el otro lado.  
+Estás trabajando para una empreza de biotecnología. El jefe te has mandado al Oriente Medio para entregar un maletín. 
 
-Llevas tu pasaporte, maleta y una tarjeta bancaria.  
- 
+Ahora, tú estás en la frontera en algún país turbio y la tienes que cruzar  para entregar el maletín a un socio.
 
 [[Empezar|room]]</tw-passagedata><tw-passagedata pid="2" name="ventana" tags="" position="1030,198" size="100,100">Te acercas la ventana. Él agente lleva un uniforme verde y un casco de la segunda guerra mundial.
 
@@ -235,7 +234,7 @@ Te dice en una manera maleducada,
 [[Regresar|room]]
 </tw-passagedata><tw-passagedata pid="3" name="mesa" tags="" position="350,500" size="100,100">Sobre la mesa hay una pila de papeles. Parece que son de formularios de solicitud de visado. 
 
-Al lado la pila hay un letrero de acero con instrucciones de cómo llenar los formularios.
+Al lado de la pila hay un letrero de acero con instrucciones de cómo llenar los formularios.
 
 Unos papeles se han caído al piso por el aire del ventilador.
 
@@ -248,7 +247,7 @@ Unos papeles se han caído al piso por el aire del ventilador.
 
 [[Tratar de hablar con él|hombreMas]]
 
-[[Terminar la conversación|room]]</tw-passagedata><tw-passagedata pid="5" name="docs" tags="" position="1300,198" size="100,100">Él agante está mirandote. 
+[[Regresar|room]]</tw-passagedata><tw-passagedata pid="5" name="docs" tags="" position="1300,198" size="100,100">Él agente está mirandote. 
 
 La expresión del rostro de él, indica que está molesto. 
 
@@ -270,9 +269,7 @@ La expresión del rostro de él, indica que está molesto.
 
 (set: $formStatus to &#39;has&#39;)
 
-[[Regresar|mesa]]</tw-passagedata><tw-passagedata pid="7" name="room" tags="" position="700,200" size="100,100">Estás en una sala de color gris claro. 
-
-Hay un ventilador ruidoso en el techo. En uno de los paredes hay una foto colgada de algún líder militar. 
+[[Regresar|mesa]]</tw-passagedata><tw-passagedata pid="7" name="room" tags="" position="700,200" size="100,100">Estás en una sala de color gris claro. Hay un ventilador ruidoso en el techo. En uno de los paredes hay una foto colgada de algún líder militar. 
 
 A la derecha hay una ventana y detrás de ella sienta un agente fronteriza.
 
@@ -286,7 +283,7 @@ Detras de ti hay otra pegueña sala.
 
 [[Ir a la sala pequeña|roomMesa]]</tw-passagedata><tw-passagedata pid="8" name="hombreMas" tags="" position="800,550" size="100,100">Él hombre se puso un poco enojado y te responde,
 
-&quot;Que quiere, no me siento bien, deja me en paz&quot;
+&quot;Qué quiere, no me siento bien, deja me en paz&quot;
 
 (if: $hasPen is false)
 [[[Preguntarle si te pueda prestar una pluma|pen]]]
@@ -294,7 +291,7 @@ Detras de ti hay otra pegueña sala.
 (if: $offeredWater is false)
 [[[Ofrecerle una botella de agua|water]]]
 
-[[Terminar la convercasion|hombre]]</tw-passagedata><tw-passagedata pid="9" name="water" tags="" position="700,700" size="100,100">Tú sacas una botella de agua de la maleta y le ofreces.
+[[Regresar|hombre]]</tw-passagedata><tw-passagedata pid="9" name="water" tags="" position="700,700" size="100,100">Tú sacas una botella de agua de la maleta y le ofreces.
 
 Él hombre delgado te dice,
 
@@ -302,8 +299,7 @@ Detras de ti hay otra pegueña sala.
 
 (set: $offeredWater to true)
 
-
-[[Terminar la conversación|room]]
+[[Regresar|room]]
 
 </tw-passagedata><tw-passagedata pid="10" name="pen" tags="" position="900,700" size="100,100">Él hombre te estás mirando.
 
@@ -312,7 +308,7 @@ Detras de ti hay otra pegueña sala.
 
 (set: $hasPen to true)
 
-[[Terminar la conversación|room]]</tw-passagedata><tw-passagedata pid="11" name="roomMesa" tags="" position="350,275" size="100,100">Enfrente de ti hay una mesa inestable de madera.
+[[Regresar|room]]</tw-passagedata><tw-passagedata pid="11" name="roomMesa" tags="" position="350,275" size="100,100">Enfrente de ti hay una mesa inestable de madera.
 
 A tu lado izquierda hay un cajero automático.
 
@@ -321,7 +317,9 @@ A tu lado izquierda hay un cajero automático.
 
 [[Sacar dinero|atm]]
 
-[[Regresar|room]]</tw-passagedata><tw-passagedata pid="12" name="atm" tags="" position="225,700" size="100,100">(if: $money is 200)[La pantalla del cajero automático mostra,
+[[Regresar|room]]</tw-passagedata><tw-passagedata pid="12" name="atm" tags="" position="225,700" size="100,100">Sacas la tarjeta bancario de la billetera, la introduzco en el cajero automático, y introduzco código PIN. 
+
+(if: $money is 200)[La pantalla del cajero automático mostra,
 
 &quot;FONDOS INSUFICIENTES&quot;]
 (else:)[Sacas 100 dolares en unos billetes arrugados.(set: $money to $money + 100)]
