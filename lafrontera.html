@@ -285,7 +285,7 @@ Detras de ti hay otra pegueña sala.
 
 &quot;Qué quiere, no me siento bien, deja me en paz&quot;
 
-(if: $hasPen is false)
+(if: $hasPen is false and $formStatus is &#39;has&#39;)
 [[[Preguntarle si te pueda prestar una pluma|pen]]]
 
 (if: $offeredWater is false)
@@ -295,7 +295,9 @@ Detras de ti hay otra pegueña sala.
 
 Él hombre delgado te dice,
 
-&quot;Gracias carnal, prefiero algo más fuerto pero la me sirve&quot;
+&quot;Gracias amigo, prefiero algo más fuerte pero esta funcionará&quot;
+
+&quot;Soy Ivan, espero que pueda curzar la frontera pronto. He estando esperado por dos horas&quot;, te dice Ivan. 
 
 (set: $offeredWater to true)
 
@@ -303,10 +305,11 @@ Detras de ti hay otra pegueña sala.
 
 </tw-passagedata><tw-passagedata pid="10" name="pen" tags="" position="900,700" size="100,100">Él hombre te estás mirando.
 
-(if: $offeredWater is false)[&quot;No tengo pluma.&quot;, te dice.]
-(else:)[&quot;Aqui está.&quot;, te dice y te da una pluma desgastada.]
+(if: $offeredWater is false)[&quot;No tengo pluma&quot;, te dice.]
+(else:)[&quot;Aqui está&quot;, te dice y te da una pluma desgastada.]
 
-(set: $hasPen to true)
+(set: $hasPen to true)[Tu miras el formulario, pero te confundes con las perguntas.]
+
 
 [[Regresar|room]]</tw-passagedata><tw-passagedata pid="11" name="roomMesa" tags="" position="350,275" size="100,100">Enfrente de ti hay una mesa inestable de madera.
 
