@@ -219,15 +219,15 @@ img.full-width {
 
 **La Frontera**
 
-Estás trabajando para una empreza de biotecnología. El jefe te has mandado al Oriente Medio para entregar un maletín. 
+Estás trabajando para una empresa de biotecnología. El jefe te ha mandado al Oriente Medio para entregar un maletín. 
 
 Ahora, tú estás en la frontera en algún país turbio y la tienes que cruzar  para entregar el maletín a un socio.
 
-[[Empezar|room]]</tw-passagedata><tw-passagedata pid="2" name="ventana" tags="" position="1030,198" size="100,100">Te acercas la ventana. Él agente lleva un uniforme verde y un casco de la segunda guerra mundial.
+[[Empezar|room]]</tw-passagedata><tw-passagedata pid="2" name="ventana" tags="" position="1030,198" size="100,100">Te acercas la ventanilla. Él agente lleva un uniforme verde y un casco de la segunda guerra mundial.
 
 Te dice en una manera maleducada,
 
-&quot;Dame los documentos.&quot;
+&quot;¡Dame los documentos!&quot;
 
 [[Dar al agente los documentos|docs]]
 
@@ -252,11 +252,11 @@ Unos papeles se han caído al piso por el aire del ventilador.
 La expresión del rostro de él, indica que está molesto. 
 
 (if: $formStatus is &#39;none&#39;)
-[&quot;¿Dónde está el formulario? Por favor, no me hagas perder el tiempo.&quot;, te dice el agente.]
+[&quot;¿Dónde está el formulario? Por favor, no me hagas perder el tiempo&quot;, te dice el agente.]
 (else-if: $formStatus is &#39;has&#39;)
-[&quot;Qué es eso? Tienes que llenar el formulario.&quot;, te dice el agente.]
+[&quot;Qué es eso? Tienes que llenar el formulario&quot;, te dice el agente.]
 (else:)
-[&quot;Bueno, el formulario se ve suficiente bueno, pero pienso que hace falta algo esencial.&quot;, te dice el agente.]
+[&quot;Bueno, el formulario se ve suficientemente bien, pero pienso que hace falta algo esencial&quot;, te dice el agente.]
 
 (if: $money is 200 and $formStatus is &#39;filled&#39;)
 [[[Sobornar al agente|success]]]
@@ -267,23 +267,25 @@ La expresión del rostro de él, indica que está molesto.
 [[Regresar|room]]
 </tw-passagedata><tw-passagedata pid="6" name="formPickedUp" tags="" position="425,700" size="100,100">Tú recoges el formulario.
 
+Te das cuenta de que no hay plumas.
+
 (set: $formStatus to &#39;has&#39;)
 
-[[Regresar|mesa]]</tw-passagedata><tw-passagedata pid="7" name="room" tags="" position="700,200" size="100,100">Estás en una sala de color gris claro. Hay un ventilador ruidoso en el techo. En uno de los paredes hay una foto colgada de algún líder militar. 
+[[Regresar|mesa]]</tw-passagedata><tw-passagedata pid="7" name="room" tags="" position="700,200" size="100,100">Estás en una sala de color gris claro. Hay un ventilador ruidoso en el techo. En una de las paredes hay una foto colgada de algún líder militar. 
 
-A la derecha hay una ventana y detrás de ella sienta un agente fronteriza.
+A la derecha hay una ventanilla y detrás de ella está sentado un agente fronterizo.
 
-La sala es vacío de otras personas, menos un hombre pálido y delgado que está parado en el rincón de la sala.
+La sala está vacío de otras personas, menos un hombre pálido y delgado que está parado en el rincón de la sala.
 
-Detras de ti hay otra pegueña sala.
+Detras de ti hay otra pequeña sala.
  
-[[Acercarte a la ventana|ventana]]
+[[Acercarte a la ventanilla|ventana]]
 
 [[Hablar con el hombre|hombre]]
 
 [[Ir a la sala pequeña|roomMesa]]</tw-passagedata><tw-passagedata pid="8" name="hombreMas" tags="" position="800,550" size="100,100">Él hombre se puso un poco enojado y te responde,
 
-&quot;Qué quiere, no me siento bien, deja me en paz&quot;
+&quot;Qué quiere, no me siento bien, dejame en paz&quot;
 
 (if: $hasPen is false and $formStatus is &#39;has&#39;)
 [[[Preguntarle si te pueda prestar una pluma|pen]]]
@@ -295,9 +297,9 @@ Detras de ti hay otra pegueña sala.
 
 Él hombre delgado te dice,
 
-&quot;Gracias amigo, prefiero algo más fuerte pero esta funcionará&quot;
+&quot;Gracias amigo, prefiero algo más fuerte pero esto funcionará&quot;
 
-&quot;Soy Ivan, espero que pueda curzar la frontera pronto. He estando esperado por dos horas&quot;, te dice Ivan. 
+&quot;Soy Ivan, espero que pueda curzar la frontera pronto. He estado esperado por dos horas&quot;, te dice Ivan. 
 
 (set: $offeredWater to true)
 
@@ -313,21 +315,21 @@ Detras de ti hay otra pegueña sala.
 
 [[Regresar|room]]</tw-passagedata><tw-passagedata pid="11" name="roomMesa" tags="" position="350,275" size="100,100">Enfrente de ti hay una mesa inestable de madera.
 
-A tu lado izquierda hay un cajero automático.
+A tu lado izquierdo hay un cajero automático.
 
 
 [[Acercarte a la mesa|mesa]]
 
 [[Sacar dinero|atm]]
 
-[[Regresar|room]]</tw-passagedata><tw-passagedata pid="12" name="atm" tags="" position="225,700" size="100,100">Sacas la tarjeta bancario de la billetera, la introduzco en el cajero automático, y introduzco código PIN. 
+[[Regresar|room]]</tw-passagedata><tw-passagedata pid="12" name="atm" tags="" position="225,700" size="100,100">Sacas la tarjeta bancaria de la billetera, la introduces en el cajero automático, y tecleas el código PIN. 
 
 (if: $money is 200)[La pantalla del cajero automático mostra,
 
 &quot;FONDOS INSUFICIENTES&quot;]
-(else:)[Sacas 100 dolares en unos billetes arrugados.(set: $money to $money + 100)]
+(else:)[Sacas 100 dólares en unos billetes arrugados.(set: $money to $money + 100)]
 
-Tienes: $money dolares.
+Tienes: $money dólares.
 
 [[Regresar|roomMesa]]</tw-passagedata><tw-passagedata pid="13" name="success" tags="" position="1501,201" size="100,100">
 **Exito!**
@@ -336,7 +338,7 @@ Tienes: $money dolares.
 Game Over
 
 
-(link: &quot;Reiniciar&quot;)[(goto: &quot;Intro&quot;)]</tw-passagedata><tw-passagedata pid="14" name="formFilled" tags="" position="75,600" size="100,100">El formulario tiene un montón the preguntas extraños en cuanto a viajes hechos en el pasado. 
+(link: &quot;Reiniciar&quot;)[(goto: &quot;Intro&quot;)]</tw-passagedata><tw-passagedata pid="14" name="formFilled" tags="" position="75,600" size="100,100">El formulario tiene un montón the preguntas extrañas en cuanto a viajes hechos en el pasado. 
 
 Sacas tu pasaporte para que puedas llenar el formulario.
 
@@ -345,7 +347,7 @@ Sacas tu pasaporte para que puedas llenar el formulario.
 
 [[Regresar|roomMesa]]</tw-passagedata><tw-passagedata pid="15" name="bribeFail" tags="" position="1300,348" size="100,100">Èl agente te dice de forma arrogante,
 
-&quot;Hombre, no puedo hacer nada con tan poca cantidad.&quot;
+&quot;Hombre, no puedo hacer nada con tan poca cantidad&quot;
 
 Èl te devuelve los documentos.
 
