@@ -223,6 +223,7 @@ Estás trabajando para una empresa de biotecnología. El jefe te ha mandado al O
 
 Ahora, tú estás en la frontera en algún país turbio y la tienes que cruzar  para entregar el maletín a un socio.
 
+
 [[Empezar|room]]</tw-passagedata><tw-passagedata pid="2" name="ventana" tags="" position="1030,198" size="100,100">Te acercas la ventanilla. Él agente lleva un uniforme verde y un casco de la segunda guerra mundial.
 
 Te dice en una manera maleducada,
@@ -245,6 +246,7 @@ Unos papeles se han caído al piso por el aire del ventilador.
 
 [[Regresar|roomMesa]]</tw-passagedata><tw-passagedata pid="4" name="hombre" tags="" position="800,400" size="100,100">Tú saludas al hombre, pero te dice que no quiere hablar.
 
+
 [[Tratar de hablar con él|hombreMas]]
 
 [[Regresar|room]]</tw-passagedata><tw-passagedata pid="5" name="docs" tags="" position="1300,198" size="100,100">Él agente está mirandote. 
@@ -266,10 +268,9 @@ La expresión del rostro de él, indica que está molesto.
 
 [[Regresar|room]]
 </tw-passagedata><tw-passagedata pid="6" name="formPickedUp" tags="" position="425,700" size="100,100">Tú recoges el formulario.
-
+(set: $formStatus to &#39;has&#39;)
 Te das cuenta de que no hay plumas.
 
-(set: $formStatus to &#39;has&#39;)
 
 [[Regresar|mesa]]</tw-passagedata><tw-passagedata pid="7" name="room" tags="" position="700,200" size="100,100">Estás en una sala de color gris claro. Hay un ventilador ruidoso en el techo. En una de las paredes hay una foto colgada de algún líder militar. 
 
@@ -279,6 +280,7 @@ La sala está vacío de otras personas, menos un hombre pálido y delgado que es
 
 Detras de ti hay otra pequeña sala.
  
+
 [[Acercarte a la ventanilla|ventana]]
 
 [[Hablar con el hombre|hombre]]
@@ -308,9 +310,12 @@ Detras de ti hay otra pequeña sala.
 </tw-passagedata><tw-passagedata pid="10" name="pen" tags="" position="900,700" size="100,100">Él hombre te estás mirando.
 
 (if: $offeredWater is false)[&quot;No tengo pluma&quot;, te dice.]
-(else:)[&quot;Aqui está&quot;, te dice y te da una pluma desgastada.]
+(else:)[[&quot;Aqui está&quot;, te dice y te da una pluma desgastada.]
+(set: $hasPen to true)]
 
-(set: $hasPen to true)[Tu miras el formulario, pero te confundes con las perguntas.]
+
+(if: $offeredWater is true and $hasPen is true)
+[Tu miras el formulario, pero te confundes con las perguntas.]
 
 
 [[Regresar|room]]</tw-passagedata><tw-passagedata pid="11" name="roomMesa" tags="" position="350,275" size="100,100">Enfrente de ti hay una mesa inestable de madera.
@@ -331,6 +336,7 @@ A tu lado izquierdo hay un cajero automático.
 
 Tienes: $money dólares.
 
+
 [[Regresar|roomMesa]]</tw-passagedata><tw-passagedata pid="13" name="success" tags="" position="1501,201" size="100,100">
 **Exito!**
 
@@ -341,8 +347,6 @@ Game Over
 (link: &quot;Reiniciar&quot;)[(goto: &quot;Intro&quot;)]</tw-passagedata><tw-passagedata pid="14" name="formFilled" tags="" position="75,600" size="100,100">El formulario tiene un montón the preguntas extrañas en cuanto a viajes hechos en el pasado. 
 
 Sacas tu pasaporte para que puedas llenar el formulario.
-
-
 (set: $formStatus to &#39;filled&#39;)
 
 [[Regresar|roomMesa]]</tw-passagedata><tw-passagedata pid="15" name="bribeFail" tags="" position="1300,348" size="100,100">Èl agente te dice de forma arrogante,
